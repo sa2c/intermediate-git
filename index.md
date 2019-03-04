@@ -1,22 +1,22 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-carpentry: "FIXME"    # what kind of Carpentry (must be either "lc", "dc", "swc", "sa2c" or "sa2c_mpi")
-venue: "FIXME"        # brief name of host site without address (e.g., "Euphoric State University")
-address: "FIXME"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
-country: "FIXME"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
-language: "FIXME"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "FIXME"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
-humandate: "FIXME"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "FIXME"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
-startdate: FIXME      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: FIXME        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+carpentry: "sa2c"    # what kind of Carpentry (must be either "lc", "dc", "swc", "sa2c" or "sa2c_mpi")
+venue: "The Boardroom, Computational Foundry"        # brief name of host site without address (e.g., "Euphoric State University")
+address: "Room 401, Computational Foundry, Swansea University, Bay Campus, Fabian Way, Swansea SA1 8EN"      # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria")
+country: "gb"      # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1)
+language: "en"     # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/ISO_639-1)
+latlng: "51.619129, -3.878851"       # decimal latitude and longitude of workshop venue (e.g., "41.7901128,-87.6007318" - use https://www.latlong.net/)
+humandate: "March 20, 2019"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "9:00am - 5:00pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+startdate: 2019-03-20      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2019-03-20        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 scw_project: "FIXME"  # project code for the SCW training project for this event
-instructor: ["FIXME"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["FIXME"]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-email: ["fixme@example.org"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+instructor: ["Mark Dawson"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: [""]     # boxed, comma-separated list of helpers' names, like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+email: ["mark.dawson@swansea.ac.uk"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:             # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
-recon_channel:        # optional: url for specific recon channel to join
+recon_channel: https://recon.swansea.ac.uk/#narrow/stream/30-intermediate-Git.202019-03-20       # optional: url for specific recon channel to join
 ---
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
@@ -48,7 +48,6 @@ recon_channel:        # optional: url for specific recon channel to join
 </iframe>
 {% endif %}
 
-<h4>This is the workshop template. Delete these lines and use it to customize your own website.</h4>
 
 <h2 id="general">General Information</h2>
 
@@ -58,6 +57,7 @@ recon_channel:        # optional: url for specific recon channel to join
   Edit the general explanatory paragraph below if you want to change
   the pitch.
 {% endcomment %}
+{% comment %}
 {% if page.carpentry == "swc" %}
   {% include sc/intro.html %}
 {% elsif page.carpentry == "dc" %}
@@ -69,6 +69,10 @@ recon_channel:        # optional: url for specific recon channel to join
 {% elsif page.carpentry == "sa2c_mpi" %}
   {% include sa2c_mpi/intro.html %}
 {% endif %}
+{% endcomment %}
+<p>
+  This workshop will follow on from previous introductory git and version control courses, and is aimed at individuals with two or more months experience. Familiarity is assumed with git commands such as add, commit, push and pull. We explore new ways to collaborate with others and also use git effectively in our personal development, debugging and troubleshooting workflows.
+</p>
 
 {% comment %}
   AUDIENCE
@@ -76,6 +80,7 @@ recon_channel:        # optional: url for specific recon channel to join
   Explain who your audience is.  (In particular, tell readers if the
   workshop is only open to people from a particular institution.
 {% endcomment %}
+{% comment %}
 {% if page.carpentry == "swc" %}
   {% include sc/who.html %}
 {% elsif page.carpentry == "dc" %}
@@ -87,6 +92,12 @@ recon_channel:        # optional: url for specific recon channel to join
 {% elsif page.carpentry == "sa2c_mpi" %}
   {% include sa2c_mpi/who.html %}
 {% endif %}
+{% endcomment %}
+<p>
+  <strong>Who:</strong>
+    The course is aimed at graduate students and other researchers at Swansea University.
+    It follows from the Software Carpentry workshop and assumes familiarity with the Bash Shell and Git sections.
+</p>
 
 {% comment %}
   LOCATION
@@ -197,6 +208,7 @@ recon_channel:        # optional: url for specific recon channel to join
 {% if site.carpenty == "swc" or site.carpentry == "dc" or site.carpentry == "lc" %}
  <h2 id="surveys">Surveys</h2>
 {% endif %}
+{% comment %}
 <p>Please be sure to complete these surveys before and after the workshop.</p>
 {% if site.carpentry == "swc" %} 
 <p><a href="{{ site.swc_pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
@@ -210,7 +222,7 @@ recon_channel:        # optional: url for specific recon channel to join
 {% endif %}
 
 <hr/>
-
+{% endcomment %}
 
 {% comment %}
   SCHEDULE
@@ -219,6 +231,7 @@ recon_channel:        # optional: url for specific recon channel to join
   to match your plans.  You may also want to change 'Day 1' and 'Day
   2' to be actual dates or days of the week.
 {% endcomment %}
+{% comment %} 
 <h2 id="schedule">Schedule</h2>
 
 {% if page.carpentry == "swc" %}
@@ -232,7 +245,7 @@ recon_channel:        # optional: url for specific recon channel to join
 {% elsif page.carpentry == "sa2c_mpi" %}
   {% include sa2c_mpi/schedule.html %}
 {% endif %}
-
+{% endcomment %}
 {% comment %}
   Collaborative Notes
 
@@ -268,6 +281,8 @@ recon_channel:        # optional: url for specific recon channel to join
   please preview your site before committing, and make sure to run
   'tools/check' as well.
 {% endcomment %}
+
+{% comment %}
 {% if page.carpentry != "sa2c_mpi" %}
 <h2 id="syllabus">Syllabus</h2>
 
@@ -283,6 +298,7 @@ recon_channel:        # optional: url for specific recon channel to join
 
 <hr/>
 {% endif %}
+{% endcomment %}
 
 {% comment %}
   SETUP
@@ -862,7 +878,7 @@ recon_channel:        # optional: url for specific recon channel to join
 {% endcomment %}
 {% comment %} End of 'OpenRefine' section. {% endcomment %}
 
-{% comment %} {% endcomment %}
+{% comment %}
 <div id="scw">
   <h3>Supercomputing Wales</h3>
   
@@ -889,9 +905,10 @@ recon_channel:        # optional: url for specific recon channel to join
     project code for this training session, and click "Join".</li>
   </ol>
 </div> {% comment %} End of 'Supercomputing Wales' section. {% endcomment %}
+{% endcomment %}
 
+{% comment %} 
 {% if page.carpentry == "sa2c" %}
-{% comment %} {% endcomment %}
 <div id="filezilla">
   <h3>FileZilla</h3>
 
@@ -924,6 +941,7 @@ recon_channel:        # optional: url for specific recon channel to join
 </div>
 {% comment %} End of 'FileZilla' section {% endcomment %}
 {% endif %}
+{% endcomment %}
 
 {% comment %}
 <div id="vm">
